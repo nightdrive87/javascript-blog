@@ -10,11 +10,7 @@ const titleClickHandler = function (event) {
     }
 
     /* [DONE] add class 'active' to the clicked link */
-
     clickedElement.classList.add('active');
-    /*
-    * Naprawiłam :D 
-    */
 
     /* [DONE] remove class 'active' from all articles */
     const activeArticles = document.querySelectorAll('.posts article.active');
@@ -32,15 +28,10 @@ const titleClickHandler = function (event) {
 
     /* [DONE] add class 'active' to the correct article */
     foundArticle.classList.add('active');
-    /* 
-    ! Czy taka metoda jest poprawna? 
-    */
 }
 const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles';
-
-
 
 const generateTitleLinks = function () {
 
@@ -55,8 +46,6 @@ const generateTitleLinks = function () {
     let html = '';
 
     for (let article of articles) {
-
-
 
         /* get the article id */
         const articleId = article.getAttribute('id');
@@ -73,7 +62,6 @@ const generateTitleLinks = function () {
 
         html = html + linkHTML;
         console.log(html);
-
     }
 
     titleList.innerHTML = html;
@@ -82,7 +70,6 @@ const generateTitleLinks = function () {
     console.log(links);
 
     for (let link of links) {
-        const clickedElement = this;
         link.addEventListener('click', titleClickHandler);
     }
 }
